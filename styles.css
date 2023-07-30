@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body,html{
+    min-height: 100vh;
+    width:100%;
+    background-color: rgb(250, 250, 250);
+}
+
+
+header{
+    background-color: rgb(252, 206, 0);
+    min-height:50px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+}
+
+.ui-btn{
+    padding:10px;
+    background-color: white;
+    border:3px solid rgb(185, 185, 185);
+    font-weight: 600;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.ui-btn:hover{
+    border-color: black;
+    background-color: white;
+}
+
+.ui-btn:active{
+    transform: scale(0.95);
+}
+
+
+.branding{
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+#top-search-bar{
+    padding: 10px;
+    width: 250px;
+    border: 3px solid rgb(185, 185, 185);
+    font-size: 1em;
+}
+
+#top-search-bar:hover{
+    border-color: black;
+}
+#top-search-bar:focus{
+    outline:3px dashed white;
+    border: 3px solid black;
+}
+
+main{
+    width : 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    justify-content: flex-start;
+    padding:10px;
+}
+
+#create-note-box{
+    display: none; /* will be enabled by js*/
+    width : 100%;
+    max-width:700px;
+    padding: 10px;
+    border : 3px solid rgb(200, 200, 200);
+    margin-bottom: 10px;
+    background-color: white;
+    animation: anim1 1s ease;
+    overflow: hidden;
+}#create-note-box:hover{border-color: rgb(232, 192, 17);}
+
+
+#title-of-note{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 1.25em;
+    border-bottom: 3px solid rgb(185, 185, 185);
+    margin-bottom:10px;
+    padding:2.5px
+}
+
+#title-of-note:hover{
+    border-color:rgb(232, 192, 17) ;
+}
+#title-of-note:focus{
+    outline: none;
+    border-color:rgb(232, 192, 17) ;
+    outline : 5px solid rgba(0, 0, 0, 0.075)
+}
+#description-of-note{
+    min-width: 100%;
+    max-width: 100%;
+    background-color: transparent;
+    font-size: 1em;
+    border: 3px solid rgb(250, 250, 250);
+    padding:10px;
+    min-height:100px;
+    margin-bottom:10px
+}#description-of-note:hover,#description-of-note:focus{border-color:rgb(232, 192, 17);}
+#description-of-note:focus{
+   outline: 5px solid rgba(0, 0, 0, 0.075);;
+}
+
+
+#discard-new-note{
+    margin-left: 10px;
+    background-color: transparent;
+}
+
+#all-notes-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+.note{
+    padding: 10px;
+    min-width:200px; 
+    max-width: 400px;
+    min-height : 200px;
+    margin: 10px;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: white;
+    box-shadow: 5px 5px 0 rgb(252, 206, 0);
+}.note:hover{border-color:black}
+.note>h2{
+    padding: 0 5px;
+    border-bottom: 3px solid rgb(232, 192, 17);
+    margin-bottom: 10px ;
+}.note>p{text-overflow: ellipsis;margin-bottom: 10px;}
+
+.item-menu-btn{
+    font-display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    border-radius: 100px;
+    width: 40px;
+    height:40px;
+    border: none;
+    background-color: rgba(105, 105, 105, 0.05);
+    color:rgb(252, 206, 0);
+    font-weight: 700;
+    cursor: pointer;
+}.item-menu-btn:hover{background-color: white; border:2px solid rgb(232, 192, 17);}.item-menu-btn:active{transform: scale(0.96);}
+
+
+@media only screen and (max-width:450px){
+    #top-search-bar{
+        width:150px;
+        font-size : 12px;
+        padding:5px;
+        border-width:2px;
+    }
+    .branding{
+        font-size: 1em;
+    }
+    .ui-btn{
+        padding:5px;
+        border:2px solid rgb(185, 185, 185);
+        font-weight: 500;
+        font-size: 0.75em;
+    }
+}
+
+@media only screen and (max-width:310px){
+    header{
+        justify-content: center;
+        flex-wrap:wrap;
+        padding: 5px 5px;
+    }
+    .branding{
+        margin-right:10px;
+    }
+    .branding, #top-search-bar{
+        margin:10px;
+    }
+    .ui-btn{
+        margin-bottom: 10px;
+    }
+    .note{
+        margin:5px;
+    }
+}
+
+@media only screen and (max-width:215px){
+    .note{
+        font-size: 10px;
+        min-width: 100px;
+    }
+}

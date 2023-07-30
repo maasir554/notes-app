@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="animations.css">
+
+</head>
+<body>
+    <header>
+        <div class="branding">Notes</div>
+        <div class="top-search">
+            <input type="search" name="top-search-bar" id="top-search-bar" placeholder="Search something...">
+        </div>
+        <button type="button" id="add-notes-btn" class="ui-btn" onclick = "showCreationBox()">New note</button>
+    </header>
+    <main>
+        <div id="create-note-box">
+            <input type="title" name="note-title" id="title-of-note" placeholder="Title">
+            <textarea type="note-description" name="note-desctiption" id="description-of-note" placeholder="Type your note here."></textarea>
+            <button class="ui-btn" id="save-notes-btn" onclick="saveNote(event); showAllNotes(); clearCreationBox(event)">Save</button>
+            <button class="ui-btn" id="discard-new-note" onclick="hideCreationBox(); clearCreationBox()">Discard</button>
+        </div>
+        <section id="all-notes-container">
+            <!-- <div class="note">
+                <h2>This is a Nice Heading</h2>
+                <p>And I am a very detailed notte about something which is very importnat to you.</p>
+                <span class="item-menu">
+                    <button class="item-menu-btn edit-item-btn ">
+                        <span class="material-symbols-outlined">
+                            edit_note
+                        </span>
+                    </button>
+                    <button class="item-menu-btn delete-item-btn" onclick="deleteNote(event)">
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </buttonclass>
+                </span>
+
+            </div>
+            <div class="note">
+                <h2>This is a Nice Heading</h2>
+                <p>And I am a very detailed notte about something which is very importnat to you.</p>
+                <span class="item-menu">
+                    <button class="item-menu-btn edit-item-btn">
+                        <span class="material-symbols-outlined">
+                            edit_note
+                        </span>
+                    </button>
+                    <button class="item-menu-btn delete-item-btn">
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </buttonclass>
+                </span>
+
+            </div>
+            <div class="note">
+                <h2>This is a Nice Heading</h2>
+                <p>And I am a very detailed notte about something which is very importnat to you.</p>
+                <span class="item-menu">
+                    <button class="item-menu-btn edit-item-btn">
+                        <span class="material-symbols-outlined">
+                            edit_note
+                        </span>
+                    </button>
+                    <button class="item-menu-btn delete-item-btn">
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </buttonclass>
+                </span>
+
+            </div>
+            <div class="note">
+                <h2>This is a Nice Heading</h2>
+                <p>And I am a very detailed notte about something which is very importnat to you.</p>
+                <span class="item-menu">
+                    <button class="item-menu-btn edit-item-btn">
+                        <span class="material-symbols-outlined">
+                            edit_note
+                        </span>
+                    </button>
+                    <button class="item-menu-btn delete-item-btn">
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </buttonclass>
+                </span>
+
+            </div> -->
+        
+        </section>
+
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
