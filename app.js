@@ -71,7 +71,7 @@ function saveNote(e){ // saves new note in our local storage, after it, the show
         desc: note_description
     }
     if (saveNotesBtn.innerText != "Update"){
-        if (note_heading !='' && note_description!='' ){
+        if (note_heading !='' || note_description!='' ){
             if (data_notes == null){
                let  all_notes = [current_note_object]
                 localStorage.setItem("notes",JSON.stringify(all_notes))
