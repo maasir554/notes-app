@@ -211,9 +211,25 @@ main{
     }
 }
 
-@media only screen and (max-width:215px){
+@media only screen and (max-width:220px){
     .note{
         font-size: 10px;
         min-width: 100px;
+    }
+}
+
+@media only screen and (max-width:175px){
+    .note{
+        font-size: 8px;
+        min-width: 75px;
+    } 
+    #top-search-bar{
+        width:120px;
+        font-size : 10px;
+        padding:5px;
+        border-width:1px;
+    }
+    main{
+        padding: 5px;
     }
 }
