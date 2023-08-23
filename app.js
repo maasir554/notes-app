@@ -22,10 +22,10 @@ function showAllNotes(){
         all_notes.forEach( (e,index) => {
             allNotesContainer.innerHTML +=        
             `
-            <div class="note">
+            <div class="note" onmouseover="showItemMenu(this)" onmouseout="hideItemMenu(this)">
                     <h2>${e.heading}</h2>
                     <p>${e.desc}</p>
-                    <span class="item-menu">
+                    <span class="item-menu" >
                         <button class="item-menu-btn edit-item-btn" onclick = "editNote(${index})">
                             <span class="material-symbols-outlined">
                                 edit_note
@@ -87,7 +87,9 @@ function saveNote(e){ // saves new note in our local storage, after it, the show
         let idx = createNoteBox.getAttribute("editNoteIndex");
         // all_notes.push(current_note_object)
         // all_notes.splice(idx,1)
-        all_notes[idx] = current_note_object
+        if (note_heading !='' || note_description!='' ){
+            all_notes[idx] = current_note_object
+        }
         localStorage.setItem("notes",JSON.stringify(all_notes))
         saveNotesBtn.innerHTML = "Save"
     }
@@ -102,6 +104,10 @@ deleteNote = (index) => {
     let all_notes = JSON.parse(data_notes);
     all_notes.splice(index,1);
     localStorage.setItem("notes", JSON.stringify(all_notes))
+    //The following is to avoid unnecessary bugs: 
+    let createNoteBox = document.getElementById("create-note-box")
+    createNoteBox.children[0].value = ""
+    createNoteBox.children[1].value = ""
 }
 clearCreationBox = (e) => {
     createNoteBox.children[0].value = ""
@@ -138,10 +144,22 @@ editNote = (idx) => {
     let all_notes = JSON.parse(data_notes);
     current_note = all_notes[idx]
     let createNoteBox = document.getElementById("create-note-box")
-    createNoteBox.style.display = "block" 
-    createNoteBox.children[0].value = current_note.heading
-    createNoteBox.children[1].value = current_note.desc
+    createNoteBox.style.display = "block"
+    if (current_note.heading !=="" && current_note.desc !== ""){
+        createNoteBox.children[0].value = current_note.heading
+        createNoteBox.children[1].value = current_note.desc
+    }
     localStorage.setItem("notes",JSON.stringify(all_notes))
     createNoteBox.setAttribute("editNoteIndex",idx)
     
+}
+
+// for showinf item-menu
+const showItemMenu = (hoveredElement) => {
+    let itemMenu = hoveredElement.children[2]
+    itemMenu.style.opacity="1"
+}
+const hideItemMenu = (hoveredElement) => {
+    let itemMenu = hoveredElement.children[2]
+    itemMenu.style.opacity="0"
 }

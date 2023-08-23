@@ -165,12 +165,13 @@ main{
     border-radius: 100px;
     width: 40px;
     height:40px;
-    border: none;
+    border: 1px solid rgb(238, 238, 238);
     background-color: rgba(105, 105, 105, 0.05);
     color:rgb(252, 206, 0);
     font-weight: 700;
     cursor: pointer;
-}.item-menu-btn:hover{background-color: white; border:2px solid rgb(232, 192, 17);}.item-menu-btn:active{transform: scale(0.96);}
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}.item-menu-btn:hover{background-color: white; border:2px solid rgb(232, 192, 17);}.item-menu-btn:active{transform: scale(0.96) translate(2px,2px);}
 
 
 @media only screen and (max-width:450px){
@@ -232,4 +233,9 @@ main{
     main{
         padding: 5px;
     }
+}
+
+.item-menu{
+    /* this will be changed */
+    opacity:0;
 }
